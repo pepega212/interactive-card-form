@@ -117,12 +117,8 @@ function massValidate() {
         expiryErrorMsg.innerHTML = "";
       } else if (expiry[0] == "") {
         expiryErrorMsg.innerHTML = "Can't be blank!";
-        document.getElementById("mm").style.borderColor = "red"
-        document.getElementById("yy").style.borderColor = "red"
       } else {
         expiryErrorMsg.innerHTML = "Wrong format!";
-        document.getElementById("mm").style.borderColor = "red"
-        document.getElementById("yy").style.borderColor = "red"
       }
     }
     function validateCvc() {
