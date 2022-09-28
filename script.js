@@ -179,7 +179,7 @@ function massValidate() {
     thankYouSection.classList.add("hidden");
     form.classList.remove("hidden");
     nameOnCard.innerHTML = cardHolder.placeholder;
-    numOnCard.innerHTML = cardNumber.placeholder;
+    numOnCard.innerHTML = "0000 0000 0000 0000";
     expMM.innerHTML = "00";
     expYY.innerHTML = "00";
     cvcDisplay.innerHTML = "000";
