@@ -86,6 +86,9 @@ function massValidate() {
       if (cardHolder.value.match(cardholderExp)) {
         errorMsg.textContent = "";
         cardHolder.style.borderColor = "hsla(279, 6%, 55%, 0.5)";
+      } else if (cardHolder.value != cardholderExp){
+        errorMsg.innerHTML = "Please input alphabet characters only";
+        cardHolder.style.borderColor = "red";
       } else {
         errorMsg.innerHTML = "Please enter cardholder name!";
         cardHolder.style.borderColor = "red";
@@ -106,7 +109,7 @@ function massValidate() {
     }
     function validateExpiry() {
       let expMonth = /^(0[0-9]|1[1-2]){2}$/;
-      let expYear = /^[0-9][0-2]{4}$/;
+      let expYear = /^[0-9][0-2]{2}$/;
   
       if (expiry[0].value.match(expMonth)) {
         expiryErrorMsg.innerHTML = "";
@@ -142,10 +145,13 @@ function massValidate() {
     if (
       nameOnCard.innerHTML == cardHolder.placeholder ||
       numOnCard.innerHTML == cardNumber.placeholder ||
+      !cardHolder.value.match(/^[A-Z a-z]+$/) ||
       expMM.innerHTML == "00" ||
       expYY.innerHTML == "00" ||
       cvcDisplay.innerHTML == "000" ||
-      (cardNumber.value.length > 0 && cardNumber.value.length < 16)
+      cardNumber.value.length == 0 ||
+      cardNumber.value.length < 16 ||
+      cardHolder.value == ""
     ) {
       return false;
     } else {
